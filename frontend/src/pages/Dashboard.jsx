@@ -39,7 +39,7 @@ export default function Dashboard() {
 
     return (
 
-        <div className="flex min-h-screen bg-slate-100">
+       <div className="dashboard-container flex min-h-screen bg-slate-100">
 
             <Sidebar />
 
