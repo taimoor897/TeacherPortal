@@ -99,7 +99,7 @@ export default function Students() {
 
   return (
 
-    <div className="flex min-h-screen bg-slate-100">
+    <div className="students-page flex min-h-screen bg-slate-100">
 
       <Sidebar />
 
