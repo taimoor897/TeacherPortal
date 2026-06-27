@@ -276,5 +276,102 @@ img, table {
 
 
 
+/* =========================
+   STUDENTS PAGE RESPONSIVE
+========================= */
+
+/* Tablets + small laptops */
+@media (max-width: 1024px) {
+
+  .students-page {
+    flex-direction: column;
+  }
+
+  .students-page .flex-1 {
+    padding: 1.5rem !important;
+  }
+
+  .students-page h1 {
+    font-size: 2rem !important;
+  }
+
+  .students-page .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .students-page table {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .students-page {
+    flex-direction: column;
+  }
+
+  .students-page .flex-1 {
+    padding: 1rem !important;
+  }
+
+  .students-page h1 {
+    font-size: 1.5rem !important;
+  }
+
+  /* FORM FIX */
+  .students-page .grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+
+  .students-page input,
+  .students-page select {
+    font-size: 0.9rem !important;
+    padding: 0.75rem !important;
+  }
+
+  .students-page button {
+    width: 100% !important;
+  }
+
+  /* TABLE FIX */
+  .students-page table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .students-page th,
+  .students-page td {
+    font-size: 0.8rem !important;
+    padding: 0.5rem !important;
+  }
+
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+
+  .students-page .flex-1 {
+    padding: 0.75rem !important;
+  }
+
+  .students-page h1 {
+    font-size: 1.3rem !important;
+  }
+
+  .students-page .bg-white {
+    padding: 1rem !important;
+    border-radius: 1rem !important;
+  }
+
+  .students-page button {
+    font-size: 0.85rem !important;
+  }
+}
+
+
+
 
 
