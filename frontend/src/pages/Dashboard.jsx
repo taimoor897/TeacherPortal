@@ -38,64 +38,64 @@ export default function Dashboard() {
     };
 
     return (
+    <div className="flex flex-col md:flex-row min-h-screen bg-slate-100">
 
-        <div className="flex min-h-screen bg-slate-100">
+        <Sidebar />
 
-            <Sidebar />
+        <div className="flex-1 p-4 sm:p-6 lg:p-10">
 
-            <div className="flex-1 p-10">
+            {/* HEADER */}
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+                Welcome Back 👋
+            </h1>
 
-                {/* HEADER */}
-                <h1 className="text-4xl font-bold">
-                    Welcome Back 👋
-                </h1>
+            <p className="text-gray-500 mt-2 text-sm sm:text-base">
+                Manage your school communication with AI
+            </p>
 
-                <p className="text-gray-500 mt-2">
-                    Manage your school communication with AI
-                </p>
+            {/* CLASS BANNER */}
+            {teacher && (
+                <div className="mt-3 inline-block bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
+                    Class: {teacher.assignedClass}
+                </div>
+            )}
 
-                {/* CLASS BANNER (RESTORED) */}
-                {teacher && (
-                    <div className="mt-3 inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-medium">
-                        Class: {teacher.assignedClass}
-                    </div>
-                )}
+            {/* STATS */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mt-6 sm:mt-10">
 
-                {/* STATS */}
-                <div className="grid grid-cols-3 gap-8 mt-10">
+                {/* STUDENTS */}
+                <div className="bg-white rounded-2xl shadow p-5 sm:p-6 lg:p-8">
+                    <h2 className="text-base sm:text-lg font-semibold">
+                        Students
+                    </h2>
+                    <p className="text-3xl sm:text-4xl lg:text-5xl mt-3 sm:mt-5">
+                        {stats.totalStudents}
+                    </p>
+                </div>
 
-                    <div className="bg-white rounded-3xl shadow p-8">
-                        <h2 className="text-xl font-semibold">
-                            Students
-                        </h2>
-                        <p className="text-5xl mt-5">
-                            {stats.totalStudents}
-                        </p>
-                    </div>
+                {/* ATTENDANCE */}
+                <div className="bg-white rounded-2xl shadow p-5 sm:p-6 lg:p-8">
+                    <h2 className="text-base sm:text-lg font-semibold">
+                        Attendance Records
+                    </h2>
+                    <p className="text-3xl sm:text-4xl lg:text-5xl mt-3 sm:mt-5">
+                        {stats.totalAttendance}
+                    </p>
+                </div>
 
-                    <div className="bg-white rounded-3xl shadow p-8">
-                        <h2 className="text-xl font-semibold">
-                            Attendance Records
-                        </h2>
-                        <p className="text-5xl mt-5">
-                            {stats.totalAttendance}
-                        </p>
-                    </div>
-
-                    <div className="bg-white rounded-3xl shadow p-8">
-                        <h2 className="text-xl font-semibold">
-                            Messages
-                        </h2>
-                        <p className="text-5xl mt-5">
-                            {stats.totalMessages}
-                        </p>
-                    </div>
-
+                {/* MESSAGES */}
+                <div className="bg-white rounded-2xl shadow p-5 sm:p-6 lg:p-8">
+                    <h2 className="text-base sm:text-lg font-semibold">
+                        Messages
+                    </h2>
+                    <p className="text-3xl sm:text-4xl lg:text-5xl mt-3 sm:mt-5">
+                        {stats.totalMessages}
+                    </p>
                 </div>
 
             </div>
 
         </div>
-
-    );
+    </div>
+);
 }
