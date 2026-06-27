@@ -47,8 +47,8 @@ const app = express();
 // Middleware
 const allowedOrigins = [
     "http://localhost:3000",
-    "http://localhost:5173", // if you ever use Vite
-    "https://taimoor897.github.io"
+    "http://localhost:5173",
+    "https://teacherportal-1.onrender.com"
 ];
 
 app.use(cors({
