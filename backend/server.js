@@ -45,11 +45,24 @@ console.log("After connectDB call");
 const app = express();
 
 // Middleware
+const allowedOrigins = [
+    "http://localhost:3000",
+    "http://localhost:5173", // if you ever use Vite
+    "https://taimoor897.github.io"
+];
+
 app.use(cors({
-    origin: [
-        "http://localhost:3000",
-        "https://taimoor897.github.io"
-    ],
+    origin: function (origin, callback) {
+
+        // Allow requests like Postman or server-to-server
+        if (!origin) return callback(null, true);
+
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true
 }));
 app.use(express.json());
