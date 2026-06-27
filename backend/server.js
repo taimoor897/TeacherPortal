@@ -45,7 +45,13 @@ console.log("After connectDB call");
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:3000",
+        "https://YOUR_USERNAME.github.io"
+    ],
+    credentials: true
+}));
 app.use(express.json());
 
 // Routes
